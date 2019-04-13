@@ -1,6 +1,7 @@
 **Morning-CLI**
 
 Command line interface to show the weather in your city.
+*only avalaible with french cities*
 
 **Install**
 ```bash
