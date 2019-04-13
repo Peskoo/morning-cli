@@ -64,7 +64,7 @@ def morning(city):
     temp = requested_weather['main']['temp'] - ABSOLUTE_ZERO
 
     # Return
-    click.echo('Actuellement de votre jolie ville de {}:'.format(city))
+    click.echo('Actuellement dans votre jolie ville de {}:'.format(city))
     click.echo('------------------')
     click.echo('Temps: {}'.format(weather))
     click.echo('------------------')
