@@ -1,12 +1,11 @@
 import json
+import os
 import requests
 
 import click
 
-import .config
 
-API_KEY = config.api_key
-
+API_KEY = os.environ.get('API_KEY')
 CITIES_DATA = None
 ABSOLUTE_ZERO = 273.15
 OPENWEATHER_API_URL = 'http://api.openweathermap.org/data/2.5/weather?id={}&appid={}'
