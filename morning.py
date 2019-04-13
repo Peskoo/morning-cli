@@ -68,7 +68,7 @@ def morning(city):
     click.echo('------------------')
     click.echo('Temps: {}'.format(weather))
     click.echo('------------------')
-    click.echo('Temperature: {}°C'.format(temp))
+    click.echo('Temperature: {}°C'.format(int(temp)))
     click.echo('------------------')
     click.echo('Bonne journée !')
 
