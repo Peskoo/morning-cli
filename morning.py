@@ -1,9 +1,9 @@
-import config
-
-import click
 import json
 import requests
 
+import click
+
+import config
 
 API_KEY = config.api_key
 
