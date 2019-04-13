@@ -9,6 +9,7 @@ cd morning-cli
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+python setup.py install
 ```
 
 **Config API**   
@@ -22,6 +23,6 @@ export API_KEY='YOUR_API_KEY'
 
 **Commands**
 - Show now
-  `morning.py --city/-c YOUR_CITY`
+  `morning now --city/-c YOUR_CITY`
 - Search a city
-  `morning.py all`
+  `morning all`
