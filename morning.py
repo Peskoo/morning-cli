@@ -26,9 +26,9 @@ class RequestedWeather():
 
     def city_id(self):
         city = next(x for x in CITIES_DATA
-                    if x['name'] == self.cityname and x['country'] == self.country)
+                    if x['name'] == self.city_name and x['country'] == self.country)
         if city:
-            return city[0]['id']
+            return city['id']
         else:
             click.echo("La ville {} n'existe pas de mon côté".format(self.city_name))
 
@@ -36,14 +36,15 @@ class RequestedWeather():
 @click.group()
 def cli():
     global CITIES_DATA
-    CITIES_DATA = json.loads('city.list.json')
+    with open('city.list.json', 'r') as f:
+        CITIES_DATA = json.load(f)
 
 
 @cli.command()
 def all():
     """Liste des villes disponibles."""
     user = input('Le nom de votre ville ? \n')
-    for city in json.loads('city.list.json'):
+    for city in CITIES_DATA:
         my_city = city['name'].lower()
         if my_city.find(user.lower()) >= 0 and city['country'] == 'FR':
             click.echo(my_city.capitalize())
@@ -57,7 +58,7 @@ def morning(city):
     """La météo de votre ville, tout simplement."""
     # Init objet
     requested_weather = RequestedWeather(city).api()
-    
+
     # Retrieve informations
     weather = requested_weather['weather'][0]['main']
     temp = requested_weather['main']['temp'] - ABSOLUTE_ZERO
