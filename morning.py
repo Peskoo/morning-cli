@@ -1,11 +1,10 @@
 import json
 import requests
+from os import environ
 
 import click
 
-import config
-
-API_KEY = config.api_key
+API_KEY = environ.get('API_KEY')
 
 
 class MyWeather():
