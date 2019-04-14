@@ -59,7 +59,6 @@ def all():
 def now(city):
     """La météo de votre ville, tout simplement."""
     # Init objet
-    import pdb; pdb.set_trace()
     requested_weather = RequestedWeather(city).api()
 
     # Retrieve informations
