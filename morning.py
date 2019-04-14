@@ -59,11 +59,15 @@ def all():
 def now(city):
     """La météo de votre ville, tout simplement."""
     # Init objet
+    import pdb; pdb.set_trace()
     requested_weather = RequestedWeather(city).api()
 
     # Retrieve informations
-    weather = requested_weather['weather'][0]['main']
-    temp = requested_weather['main']['temp'] - ABSOLUTE_ZERO
+    if requested_weather:
+        weather = requested_weather['weather'][0]['main']
+        temp = requested_weather['main']['temp'] - ABSOLUTE_ZERO
+    else:
+        click.echo('Tu dois enregistrer une API_KEY')
 
     # Return
     click.echo('Actuellement dans votre jolie ville de {}:'.format(city))
