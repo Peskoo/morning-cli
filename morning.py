@@ -1,13 +1,15 @@
 import json
 import os
+import pathlib
 import requests
 
 import click
 
 
+ABSOLUTE_ZERO = 273.15
 API_KEY = os.environ.get('API_KEY')
 CITIES_DATA = None
-ABSOLUTE_ZERO = 273.15
+DATA_FOLDER = pathlib.Path("data/")
 OPENWEATHER_API_URL = 'http://api.openweathermap.org/data/2.5/weather?id={}&appid={}'
 
 
@@ -36,7 +38,7 @@ class RequestedWeather():
 @click.group()
 def cli():
     global CITIES_DATA
-    with open('city.list.json', 'r') as f:
+    with open(DATA_FOLDER / 'city.list.json', 'r') as f:
         CITIES_DATA = json.load(f)
 
 
