@@ -1,6 +1,7 @@
 **Morning-CLI**
 
-Command line interface to show the weather in your city.
+Command line interface to show the weather in your city.  
+*Only avalaible with cities from France*
 
 **Install**
 ```bash
@@ -14,7 +15,7 @@ python setup.py install
 
 **Config API**   
 Visit [OpenWeatherMAP](https://openweathermap.org/price) and sign up for free.   
-Then copy the api key you received in your inbox mail.
+Then copy the api key you received in your inbox.
 
 ```bash
 source .venv/bin/activate
